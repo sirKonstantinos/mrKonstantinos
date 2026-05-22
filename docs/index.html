@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Portfolio</title>
+    <title>Konstantinos - Portfolio</title>
     <style>
         /* CSS Variables for consistent theming */
         :root {
@@ -233,6 +233,32 @@
             font-size: 0.9rem;
             background-color: var(--bg-color);
         }
+
+        /* Scroll to Top Button */
+        #scrollTopBtn {
+        display: none; /* Hidden by default */
+        position: fixed; /* Fixed/sticky position */
+        bottom: 30px; /* Place it 30px from the bottom */
+        right: 30px; /* Place it 30px from the right */
+        z-index: 999; /* Make sure it does not overlap with other elements */
+        font-size: 24px;
+        font-weight: bold;
+        border: none;
+        outline: none;
+        background-color: var(--accent-color);
+        color: var(--bg-color);
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%; /* Make it perfectly round */
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        #scrollTopBtn:hover {
+        background-color: #7dd3fc;
+        transform: translateY(-5px); /* Slight bounce on hover */
+        }
     </style>
 </head>
 <body>
@@ -251,7 +277,7 @@
     <!-- Hero Section -->
     <section id="hero">
         <span class="greeting">Hi, my name is</span>
-        <h1 class="title">Your Name.</h1>
+        <h1 class="title">Konstantinos.</h1>
         <h2 class="subtitle">I build things for the web.</h2>
         <p class="hero-text">
             I'm a Junior Software Developer and a 5th-year Informatics & Electronic Systems Engineering student. 
@@ -265,7 +291,7 @@
         <h2>About Me</h2>
         <div class="about-content">
             <div class="about-text">
-                <p>Hello! My name is [Your Name] and I enjoy creating things that live on the internet. My interest in software development started back when I began my academic journey, and it has evolved into a true passion.</p>
+                <p>Hello! My name is Konstantinos and I enjoy creating things that live on the internet. My interest in software development started back when I began my academic journey, and it has evolved into a true passion.</p>
                 <p>Currently, I am in my <strong>5th year</strong> studying Informatics and Electronic Systems Engineering. Alongside my studies, I have gained <strong>6 months of professional experience</strong> working at a software company. This role taught me how to collaborate effectively in a team, write clean code, and tackle real-world problems.</p>
                 <p>My main focus these days is building accessible, inclusive products and improving my backend architecture skills with Java.</p>
             </div>
@@ -316,18 +342,45 @@
     <section id="contact">
         <h2>Get In Touch</h2>
         <p>I'm currently looking for new opportunities. Whether you have a question, a project idea, or just want to say hi, my inbox is always open. I'll try my best to get back to you!</p>
-        <a href="mailto:your.email@example.com" class="btn">Say Hello</a>
+        <a href="mailto:kilinkaridiskostas200@gmail.com" class="btn">Say Hello</a>
         <br><br>
         <div style="margin-top: 2rem;">
-            <a href="https://github.com/YOUR_USERNAME" target="_blank" style="margin-right: 1.5rem; font-size: 1.2rem;">GitHub</a>
-            <a href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank" style="font-size: 1.2rem;">LinkedIn</a>
+            <a href="https://github.com/sirKonstantinos" target="_blank" style="margin-right: 1.5rem; font-size: 1.2rem;">GitHub</a>
+            <a href="https://linkedin.com/in/konstantinos-kilinkaridis-a892b72b6" target="_blank" style="font-size: 1.2rem;">LinkedIn</a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>Designed & Built by [Your Name]</p>
+        <p>Designed & Built by Konstantinos</p>
     </footer>
 
+    <!-- Scroll to Top Button -->
+    <button onclick="scrollToTop()" id="scrollTopBtn" title="Go to top">↑</button>
+    
+    <script>
+    // Get the button element
+    let mybutton = document.getElementById("scrollTopBtn");
+
+    // When the user scrolls down 300px from the top of the document, show the button
+    window.onscroll = function() { scrollFunction() };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // Enables smooth scrolling
+        });
+    }
+    </script>
+    
 </body>
 </html>
